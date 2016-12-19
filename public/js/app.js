@@ -5,7 +5,8 @@ socket.on('connect', function () {
 });
 
 socket.on('message', function (message) {
-  document.getElementsByClassName("message-board")[0].innerHTML = message.text;
+  //document.getElementsByClassName("message-board")[0].innerHTML = message.text;
+  jQuery('.messages').append('<p>' + message.text + '</p>');
 });
 
 // Handles submiting of new message
