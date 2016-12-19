@@ -5,5 +5,21 @@ socket.on('connect', function () {
 });
 
 socket.on('message', function (message) {
-  document.getElementsByClassName("pagetitle")[0].innerHTML = message.text;
+  document.getElementsByClassName("message-board")[0].innerHTML = message.text;
+});
+
+// Handles submiting of new message
+var $form = jQuery('#message-form');
+
+$form.on('submit', function(event){
+  var $messageInput = $form.find('input[name=message]');
+
+  event.preventDefault();
+
+  socket.emit('message', {
+    text: $messageInput.val()
+  });
+
+  $messageInput.val('');
+
 });
