@@ -5,8 +5,10 @@ socket.on('connect', function () {
 });
 
 socket.on('message', function (message) {
+  var momentTimestamp = moment.utc(message.timestamp);
+
   //document.getElementsByClassName("message-board")[0].innerHTML = message.text;
-  jQuery('.messages').append('<p>' + message.text + '</p>');
+  jQuery('.messages').append('<p><strong>' + momentTimestamp.local().format('D-MMM-YYYY, h:mm:ss A') + '</strong> - ' + message.text + '</p>');
 });
 
 // Handles submiting of new message
