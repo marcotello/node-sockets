@@ -41,8 +41,16 @@
         <div class="login-join">
           <h2>Join Chat</h2>
           <form action="/chat.html" method="get">
-            <label for="name">Display Name</label>
-            <input type="text" name="name" />
+            <div class="input-field col s12">
+              <i class="material-icons prefix">account_circle</i>
+              <input id="icon_prefix" type="text" class="validate" name="name">
+              <label for="icon_prefix" class="">Display Name</label>
+            </div>
+            <div class="input-field col s12">
+              <i class="material-icons prefix">chat_bubble</i>
+              <input id="icon_prefix" type="text" class="validate" name="room">
+              <label for="icon_prefix" class="">Chat Room</label>
+            </div>
             <button class="waves-effect waves-light btn blue m-b-xs" type="submit" name="action">Join the Chat
               <i class="material-icons right">send</i>
             </button>
