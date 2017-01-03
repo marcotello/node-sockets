@@ -18,8 +18,7 @@ socket.on('message', function (message) {
   //document.getElementsByClassName("message-board")[0].innerHTML = message.text;
   //jQuery('.messages').append('<p><strong>' + momentTimestamp.local().format('D-MMM-YYYY, h:mm:ss A') + '</strong> - ' + message.text + '</p>');
 
-  $label.append('<p><small>' + message.name + ' - '+ momentTimestamp.local().format('D-MMM-YYYY, h:mm:ss A') + '</small> - ');
-  $label.append('<strong>' + message.text + '</strong></p>');
+  $label.append('<p><small>' + message.name + ' - '+ momentTimestamp.local().format('D-MMM-YYYY, h:mm:ss A') + '</small> - <strong>' + message.text + '</strong></p>');
 });
 
 // Handles submiting of new message
